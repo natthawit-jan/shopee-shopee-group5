@@ -22,6 +22,31 @@ ${password}    XXXXXX
     Wait Until Page Contains    ${productName}
     Wait Until Page Contains    ${price}
     Wait Until Page Contains    ${sellerUser}
+กดปุ่ม ซื้อสินค้า 
+    Click Element    //*[@id="main"]/div/div[2]/div[2]/div[2]/div[2]/div[3]/div/div[5]/div/div/button[2]
+กรอก username และ password 
+    Wait Until Element Is Visible    name:loginKey
+    Input Text    name:loginKey    ${username}
+    Input Password    name:password    ${password}
+สั่ง log In
+    Press Keys    name:password    RETURN
+
+รอเพื่อใส่ OTP
+    Set Selenium Implicit Wait    20
+กดปุ่ม ซื้อสินค้า อีกครั้ง
+    Click Element    //*[@id="main"]/div/div[2]/div[2]/div[2]/div[2]/div[3]/div/div[5]/div/div/button[2]
+เช็คชื่อสินค้า จำนวน ราคาต่อชิ้น ราคารวม และรวมทั้งหมด
+    Element Attribute Value Should Be    //a[@class="cart-item-overview__name"]    title    ${productName}
+    Element Should Contain               //span[@class="cart-item__unit-price cart-item__unit-price--after"]          ${price}
+    Element Attribute Value Should Be    //*[@id="main"]/div/div[2]/div[2]/div[3]/div[1]/div[3]/div/div[2]/div/div/div[5]/div[1]/input    value    1
+
+สั่งซื้อสินค้า 
+    Click Element     //*[@id="main"]/div/div[2]/div[2]/div[3]/div[2]/div[7]/div[5]/button
+ปิด Browser
+    Close Browser
+
+
+
 
 
 

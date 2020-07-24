@@ -10,6 +10,8 @@ ${URL}    https://shopee.co.th/(Pre-Order)-Xiaomi-iHealth-Blood-Pressure-Monitor
 ${sellerUser}    pumper2500
 ${productName}    (Pre-Order) Xiaomi iHealth Blood Pressure Monitor 2 - เครื่องวัดความดัน รุ่น 2
 ${price}    ฿11,160
+${username}    0953569497
+${password}    XXXXXX  
 
 
 *** Test Cases ***
